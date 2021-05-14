@@ -4,12 +4,23 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-	};
+		this.state = {
+			message:''
+		}
+	}
+
+	clickHandler(){
+		this.setState({
+			message:"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+		})
+	}
+	
 
     render() {
     	return(
     		<div id="main">
-				{ /* Do not remove this main div!! */ }
+				<p id="para">{this.state.message}</p>
+					<button id="click" onClick={this.clickHandler.bind(this)}>Click me</button> 
     		</div>
     	);
     }
